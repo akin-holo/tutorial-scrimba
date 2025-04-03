@@ -1,0 +1,23 @@
+button {
+   font-weight: bold;
+}
+
+.increment-btn {
+   display: block;
+   color: #fff;
+   width: 200px;
+   padding: 10px 0;
+   background-color: brown;
+   border: none;
+   border-radius: 5px;
+   margin-bottom: 10px;
+}
+
+.save-btn {
+   color: #fff;
+   width: 200px;
+   padding: 10px 0px;
+   background-color: #008000;
+   border: none;
+   border-radius: 5px;
+}
