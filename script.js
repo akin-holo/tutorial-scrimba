@@ -13,7 +13,7 @@ increment()
 // save click
 function save() {
    let countStr = count + " - "
-   console.log(count)
+   // console.log(count)
    previousEntries.textContent += countStr
    countEl.textContent = 0
    count = 0
@@ -25,4 +25,4 @@ let greeting = "Hi, my name is "
 
 let myGreeting = greeting + name 
 
-console.log(myGreeting)
+// console.log(myGreeting)
