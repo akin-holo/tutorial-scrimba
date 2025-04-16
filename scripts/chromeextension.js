@@ -7,9 +7,13 @@ const deleteBtn = document.getElementById("deleteAll");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
 if (leadsFromLocalStorage) {
-   myLeads = leadsFromLocalStorage
-   renderLeads()
+   myLeads = leadsFromLocalStorage;
+   render(myLeads);
 }
+
+// Refector the function so that it takes a parameter, leads, that it uses
+// instead of the global myLeads variable. Remember to update all invocations 
+// of the function as well.
 
 
 // passing the value of the input field to the myLeads array
@@ -17,7 +21,7 @@ saveButton.addEventListener("click", () => {
    myLeads.push(inputField.value);
    clearInput();
    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-   renderLeads();
+   render(myLeads);
    console.log(localStorage);
 });
 
@@ -25,17 +29,17 @@ saveButton.addEventListener("click", () => {
 deleteBtn.addEventListener("dblclick", function() {
    localStorage.clear()
    myLeads = []
-   renderLeads()
+   render(myLeads);
 })
 
 // Log out the items in the myLeads array using a for loop 
-function renderLeads() {
+function render(leads) {
 let listItems = "";
-for (let i = 0; i < myLeads.length; i++) {
+for (let i = 0; i < leads.length; i++) {
 
    listItems += `<li>
-                     <a href="${myLeads[i]}" target="_blank">
-                        ${myLeads[i]}
+                     <a href="${leads[i]}" target="_blank">
+                        ${leads[i]}
                      </a>
                  </li>`; 
    };
